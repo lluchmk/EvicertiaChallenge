@@ -1,0 +1,474 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "CalculatorService.Server",
+    "version": "v1"
+  },
+  "paths": {
+    "/Calculator/add": {
+      "post": {
+        "tags": [
+          "Calculator"
+        ],
+        "summary": "Add two or more operands and retrieve the result.",
+        "requestBody": {
+          "description": "Contains the operands that will be added.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Calculator/sub": {
+      "post": {
+        "tags": [
+          "Calculator"
+        ],
+        "summary": "Subtrack two or more operands and retrieve the result.",
+        "requestBody": {
+          "description": "Contais the minuend and subtrahend of the operation.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Calculator/mult": {
+      "post": {
+        "tags": [
+          "Calculator"
+        ],
+        "summary": "Multiply two or more operands and retrieve the result.",
+        "requestBody": {
+          "description": "Conatins the factors the will be multiplied.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MultRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MultRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MultRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MultResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MultResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MultResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Calculator/div": {
+      "post": {
+        "tags": [
+          "Calculator"
+        ],
+        "summary": "Divide two or more operands and retrieve the result.",
+        "requestBody": {
+          "description": "Contains the dividend and divisor.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DivRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DivRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DivRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Calculator/sqrt": {
+      "post": {
+        "tags": [
+          "Calculator"
+        ],
+        "summary": "Square root of one operand and retrieve the result.",
+        "requestBody": {
+          "description": "Contins the number for which the square root will be calculated.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SqrtRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SqrtRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SqrtRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SqrtResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SqrtResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SqrtResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Journal/query": {
+      "post": {
+        "tags": [
+          "Journal"
+        ],
+        "summary": "Request all operations for a Tracking­Id.",
+        "requestBody": {
+          "description": "Contains the Trackingid.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JournalRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JournalRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/JournalRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JournalResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JournalResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JournalResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddRequest": {
+        "type": "object",
+        "properties": {
+          "addends": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddResponse": {
+        "type": "object",
+        "properties": {
+          "sum": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DivRequest": {
+        "type": "object",
+        "properties": {
+          "dividend": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "divisor": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DivResponse": {
+        "type": "object",
+        "properties": {
+          "quotient": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "remainder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JournalOperation": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "type": "string",
+            "nullable": true
+          },
+          "calculation": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JournalRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JournalResponse": {
+        "type": "object",
+        "properties": {
+          "operations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JournalOperation"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MultRequest": {
+        "type": "object",
+        "properties": {
+          "factors": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MultResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SqrtRequest": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SqrtResponse": {
+        "type": "object",
+        "properties": {
+          "square": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubRequest": {
+        "type": "object",
+        "properties": {
+          "minuend": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subtrahend": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubResponse": {
+        "type": "object",
+        "properties": {
+          "difference": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

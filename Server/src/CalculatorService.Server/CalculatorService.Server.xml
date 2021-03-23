@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CalculatorService.Server</name>
+    </assembly>
+    <members>
+        <member name="M:CaltulatorServiceServer.Controllers.CalculatorController.Add(CalculatorService.Server.Application.Calculator.Add.AddRequest,System.String)">
+            <summary>
+            Add two or more operands and retrieve the result.
+            </summary>
+            <param name="request">Contains the operands that will be added.</param>
+            <param name="trackId">ID that will be used to track and store the operations performed.</param>
+            <returns>The sum of the given operands.</returns>
+        </member>
+        <member name="M:CaltulatorServiceServer.Controllers.CalculatorController.Sub(CalculatorService.Server.Application.Calculator.Sub.SubRequest,System.String)">
+            <summary>
+            Subtrack two or more operands and retrieve the result.
+            </summary>
+            <param name="request">Contais the minuend and subtrahend of the operation.</param>
+            <param name="trackId">ID that will be used to track and store the operations performed.</param>
+            <returns>The difference of the fiven operands.</returns>
+        </member>
+        <member name="M:CaltulatorServiceServer.Controllers.CalculatorController.Mult(CalculatorService.Server.Application.Calculator.Mult.MultRequest,System.String)">
+            <summary>
+            Multiply two or more operands and retrieve the result.
+            </summary>
+            <param name="request">Conatins the factors the will be multiplied.</param>
+            <param name="trackId">ID that will be used to track and store the operations performed.</param>
+            <returns>The product of the given operands.</returns>
+        </member>
+        <member name="M:CaltulatorServiceServer.Controllers.CalculatorController.AddDiv(CalculatorService.Server.Application.Calculator.Div.DivRequest,System.String)">
+            <summary>
+            Divide two or more operands and retrieve the result.
+            </summary>
+            <param name="request">Contains the dividend and divisor.</param>
+            <param name="trackId">ID that will be used to track and store the operations performed.</param>
+            <returns>The quotiend and remainder of the given operands.</returns>
+        </member>
+        <member name="M:CaltulatorServiceServer.Controllers.CalculatorController.Sqrt(CalculatorService.Server.Application.Calculator.Sqrt.SqrtRequest,System.String)">
+            <summary>
+            Square root of one operand and retrieve the result.
+            </summary>
+            <param name="request">Contins the number for which the square root will be calculated.</param>
+            <param name="trackId">ID that will be used to track and store the operations performed.</param>
+            <returns>The square root of the given operand.</returns>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.JournalController.GetJournal(CalculatorService.Server.Application.DTOs.JournalRequest)">
+            <summary>
+            Request all operations for a Tracking­Id.
+            </summary>
+            <param name="request">Contains the Trackingid.</param>
+            <returns>All the operations for the given TrackingId.</returns>
+        </member>
+    </members>
+</doc>
