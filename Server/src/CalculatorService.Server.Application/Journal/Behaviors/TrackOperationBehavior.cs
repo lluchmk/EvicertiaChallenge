@@ -12,6 +12,8 @@ namespace CalculatorService.Server.Application.Journal.Behaviors
         where TResponse : IOperationResponse
     {
 
+        private const string TRACKID_HEADER = "X-Evi-Tracking-Id";
+
         private readonly IJournalService _journalService;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
@@ -25,7 +27,7 @@ namespace CalculatorService.Server.Application.Journal.Behaviors
         {
             var response = await next();
 
-            var trackId = _httpContextAccessor.HttpContext.Request.Headers["X-Evi-Tracking-Id"];
+            var trackId = _httpContextAccessor.HttpContext.Request.Headers[TRACKID_HEADER];
             if (!string.IsNullOrWhiteSpace(trackId))
             {
                 _journalService.RegisterOperation(trackId, request, response, DateTime.UtcNow);
